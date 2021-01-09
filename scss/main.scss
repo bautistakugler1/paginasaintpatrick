@@ -1,0 +1,112 @@
+@mixin margenYpadding ($margin,$padding) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin display($display,$justify) {
+    display: $display;
+    justify-content: $justify;
+}
+@mixin WidhtYheight ($widht,$height) {
+    width: $widht;
+    height: $height;
+}
+$colorBlanco: white; 
+
+* {
+    @include margenYpadding(0px,0px);
+    box-sizing: border-box;
+  }
+
+body {
+    height: 200vh;
+    background-image: linear-gradient(#1b4332, #2d6a4f);
+  }
+
+p {
+    color: black;
+    font-weight: normal;
+    font-style: normal;
+    font-size: medium;
+  }
+
+ul {
+    color: $colorBlanco ;
+  }
+
+th {
+    color: $colorBlanco !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+    font-style: initial;
+  }
+
+td {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+form {
+    color: $colorBlanco;
+}
+
+.nuestrapropesta {
+    color: green;
+    text-decoration: underline;
+  }
+
+header,footer,section,nav,aside {
+    background: gold;
+  }
+
+  section {
+    background-color: rgba(200, 200, 100, 0.4);
+  }
+
+footer div {
+    justify-content: space-around;
+    align-content: center;
+  }
+
+.translate {
+    background-color: #d8f3dc;
+    transform: translateY(-30px);
+  }
+  
+.animado {
+    @include WidhtYheight(500px,300px);
+    animation-name: fondo; 
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-delay: 2;
+    animation-timing-function: ease;
+    background-image: url("images/IMG_5316.JPG");
+  }
+@keyframes fondo {
+    0% {
+      background-image: url("images/IMG_5317.JPG");
+    }
+    50% {
+      background-image: url("images/IMG_5318.JPG");
+    }
+  }
+  
+.headerPrincipal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+.listaNavbar li {
+    display: inline-block;
+  }
+  
+.listaNavbar a:active, a:link, a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px;
+  }
